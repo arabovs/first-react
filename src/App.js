@@ -2,12 +2,21 @@ import React from 'react';
 
 
 const App = () => {
+
+    const [value, setValue] = React.useState('Promotional');
+
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    };
+
+
+
     return (
         <>
         <div>
       <label>
         Card Set: 
-        <select>
+        <select   value={value} onChange={handleChange}>
           <option value="Promotional">Promotional</option>
           <option value="The Fellowship of the Ring">The Fellowship of the Ring</option>
           <option value="Realms of the Elf-lords">Realms of the Elf-lords</option>
@@ -29,6 +38,7 @@ const App = () => {
           <option value="Ages End">Ages End</option>
         </select>
       </label>
+      <p>Selected set: {value}</p>
     </div>
         </>
         
